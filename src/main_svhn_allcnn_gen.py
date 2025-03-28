@@ -18,7 +18,7 @@ def main():
     
     dataset = 'svhn'
     n_generators = 5
-    path_teacher ="/content/drive/MyDrive/kegnet_work-main-20250326T102214Z-001/kegnet_work-main/svhn_allcnn.pth"
+    path_teacher ="/kaggle/working/zMUGAN_result/svhn_allcnn.pth"
     path_out = 'src/path_o'
 
     generators = []
