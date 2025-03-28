@@ -61,8 +61,7 @@ for num_data_ in [5000]:
         classifier = ALLCNN.AllCNN()
         
     checkpoint = torch.load(path, map_location=DEVICE)
-    model_state = checkpoint.get('model_state', None)
-    classifier.load_state_dict(model_state)
+    classifier.load_state_dict(checkpoint)
     classifier = classifier.cuda()
         
     # generate dataset
