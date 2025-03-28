@@ -15,7 +15,7 @@ import os
 import numpy as np
 import torch
 
-
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def set_seed(seed):
     """
     Set a random seed for numpy and PyTorch.
