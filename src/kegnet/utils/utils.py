@@ -37,11 +37,16 @@ def save_checkpoints(model, path):
 def load_checkpoints(model, path, device):
     """
     Load a saved model.
+
+    
     """
-    model_state = torch.load(path, map_location=device)
+    checkpoint = torch.load(path, map_location=DEVICE)
+    classifier.load_state_dict(checkpoint)
+    classifier = classifier.cuda()
+    #model_state = torch.load(path, map_location=device)
     #checkpoint = torch.load(path, map_location=device)
     #model_state = checkpoint.get('model_state', None)
-    model.load_state_dict(model_state)
+    #model.load_state_dict(model_state)
     #model.load_state_dict(model_state)
     # model.load_state_dict(torch.load(path, map_location=device))
     #org_model = AllCNN()  # Assuming AllCNN is defined elsewhere in your code
