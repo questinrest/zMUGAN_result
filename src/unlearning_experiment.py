@@ -25,7 +25,7 @@ d = data.to_dataset(dataset)
 if model_name == "vgg16":
     classifier = VGG16.VGG16()
 else:
-    classifier = AllCNN.AllCNN()
+    classifier = ALLCNN.AllCNN()
 checkpoint = torch.load(path, map_location=DEVICE)
 model_state = checkpoint.get('model_state', None)
 classifier.load_state_dict(model_state)
