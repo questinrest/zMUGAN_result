@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from unlearning_experiment_utils import *
 from kegnet.generator.utils import sample_kegnet_data
-from kegnet.classifier.models import lenet,resnet,VGG16,AllCNN
+from kegnet.classifier.models import lenet,resnet,VGG16,ALLCNN
 from kegnet.utils import data, utils
 from kegnet.classifier.train import eval_classifier, predict_labels
 from torch.utils.data import DataLoader, TensorDataset
