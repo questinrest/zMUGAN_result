@@ -1,5 +1,5 @@
 import torch
-import torch.nn ass nn
+import torch.nn as nn
 from unlearning_experiment_utils import *
 from kegnet.generator.utils import sample_kegnet_data
 from kegnet.classifier.models import lenet,resnet,VGG16,AllCNN
