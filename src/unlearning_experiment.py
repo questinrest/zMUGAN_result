@@ -13,13 +13,13 @@ from sklearn.linear_model import LogisticRegression
 
 
 
-target_class_id = 0
+target_class_id = 3
 
 dataset = "svhn"
 model_name = "allcnn"
 batch_size = 32
 
-path = f"../pretrained/{dataset}_{model_name}.pth.tar"
+path = "/kaggle/working/zMUGAN_result/svhn_allcnn.pth" ##path to teacher
 
 d = data.to_dataset(dataset)
 if model_name == "vgg16":
@@ -39,16 +39,21 @@ test_loss, test_acc, true_y, pred_y = eval_classifier(classifier, test_data, los
 
 # load generators 
 generators_paths = [ 
-                    f"../out/{model_name}/{dataset}/generator-0/generator-200.pth.tar", 
-                    f"../out/{model_name}/{dataset}/generator-1/generator-200.pth.tar", 
-                    f"../out/{model_name}/{dataset}/generator-2/generator-200.pth.tar", 
-                    f"../out/{model_name}/{dataset}/generator-3/generator-200.pth.tar", 
-                    f"../out/{model_name}/{dataset}/generator-4/generator-200.pth.tar", 
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-0/generator-100.pth.tar", 
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-0/generator-200.pth.tar", 
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-1/generator-100.pth.tar", 
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-1/generator-200.pth.tar", 
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-2/generator-100.pth.tar",
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-2/generator-200.pth.tar",
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-3/generator-100.pth.tar",
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-3/generator-200.pth.tar",
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-4/generator-100.pth.tar",
+                    "/kaggle/working/zMUGAN_result/src/path_o/generator-4/generator-200.pth.tar"
                     ]
 
 
 
-for num_data_ in [ 100, 200, 300, 500, 1000, 2000 ]:
+for num_data_ in [5000]:
     
     print ("model loaded")
     if model_name == "vgg16":
