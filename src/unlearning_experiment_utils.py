@@ -9,7 +9,7 @@ import torch.nn as nn
 from copy import deepcopy
 
 
-from kegnet.classifier.models import lenet,resnet,VGG16,AllCNN
+from kegnet.classifier.models import ALLCNN
 from kegnet.utils import data, utils
 from kegnet.classifier.train import eval_classifier, predict_labels
 
